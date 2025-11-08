@@ -261,7 +261,7 @@ if __name__ == "__main__":
     if not rVersion in rVersions:
         printc("Unsupported Operating System, Works only on Ubuntu Server 20")
         sys.exit(1)
-    printc("XUI 22f Ub %s Installer by Silenttrix CK MOD" % rVersion, col.GREEN, 2)
+    printc("XUI 22f Ub %s Inst by Silenttrix CK MOD" % rVersion, col.GREEN, 2)
     print(" ")
     rType = input("  Installation Type [MAIN, LB, UPDATE]: ")
     print(" ")
