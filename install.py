@@ -6,7 +6,7 @@ from zipfile import ZipFile
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-rDownloadURL = {"main": "https://bitbucket.org/silenttrixx/install_ui/downloads/main_xui_silenttrix_ck20.04.zip", "sub": "https://bitbucket.org/silenttrixx/install_ui/downloads/sub_xui_silenttrix_ck20.04.zip"}
+rDownloadURL = {"main": "https://github.com/silenttrixx/Xtream-Ui_silenttrix_ck_20.04/releases/download/ckmod/main_xui_silenttrix_ck20.04.zip", "sub": "https://github.com/silenttrixx/Xtream-Ui_silenttrix_ck_20.04/releases/download/ckmod/sub_xui_silenttrix_ck20.04.zip"}
 rPackages = ["libcurl4", "libxslt1-dev", "libgeoip-dev", "libonig-dev", "e2fsprogs", "wget", "mcrypt", "nscd", "htop", "zip", "unzip", "mc", "mariadb-server", "libpng16-16", "libzip5", "python3-paramiko", "python-is-python3"]
 rInstall = {"MAIN": "main", "LB": "sub"}
 rUpdate = {"UPDATE": "update"}
@@ -118,9 +118,9 @@ def install(rType="MAIN"):
 def update(rType="MAIN"):
     if rType == "UPDATE":
         printc("Enter the link of release_xyz.zip file:", col.BRIGHT_RED)
-        rlink = input('Example: https://bitbucket.org/silenttrixx/install_ui/downloads/update.zip\n\nNow enter the link:\n\n')
+        rlink = input('Example: https://github.com/silenttrixx/Xtream-Ui_silenttrix_ck_20.04/releases/download/ckmod/update.zip\n\nNow enter the link:\n\n')
     else:
-        rlink = "https://bitbucket.org/silenttrixx/install_ui/downloads/update.zip"
+        rlink = "https://github.com/silenttrixx/Xtream-Ui_silenttrix_ck_20.04/releases/download/ckmod/update.zip"
         printc("Downloading Software Update")  
     os.system('wget -q -O "/tmp/update.zip" "%s"' % rlink)
     if os.path.exists("/tmp/update.zip"):
@@ -223,8 +223,8 @@ def configure():
     except: pass
     if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/tv_archive"): os.mkdir("/home/xtreamcodes/iptv_xtream_codes/tv_archive/")
     os.system("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/")
-    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb"): os.system("wget -q https://bitbucket.org/silenttrixx/install_ui/downloads/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb")
-    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php"): os.system("wget -q https://bitbucket.org/silenttrixx/install_ui/downloads/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php")
+    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb"): os.system("wget -q https://github.com/silenttrixx/Xtream-Ui_silenttrix_ck_20.04/raw/refs/heads/main/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb")
+    if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php"): os.system("wget -q https://github.com/silenttrixx/Xtream-Ui_silenttrix_ck_20.04/raw/refs/heads/main/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php")
     os.system("chown xtreamcodes:xtreamcodes -R /home/xtreamcodes > /dev/null")
     os.system("chmod -R 0777 /home/xtreamcodes > /dev/null")
     os.system("chattr -ai /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb > /dev/null")
